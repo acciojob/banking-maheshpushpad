@@ -10,12 +10,11 @@ public class BankAccount {
     }
 
     public BankAccount(String name, double balance, double minBalance) {
-
         this.name = name;
         this.balance = balance;
         this.minBalance = minBalance;
-
     }
+
 
     public String getName() {
         return name;
@@ -46,9 +45,9 @@ public class BankAccount {
         //Generate account number having given number of 'digits' such that the sum of digits is equal to 'sum'
         //If it is not possible, throw "Account Number can not be generated" exception
 
-        if (sum > digits * 9)
+        if (sum > digits * 9) {
             throw new Exception("Account number can not be generated");
-
+        }
         String ans = "";
         int count = 0;
 
@@ -77,9 +76,10 @@ public class BankAccount {
 
     public void withdraw(double amount) throws Exception {
         // Remember to throw "Insufficient Balance" exception, if the remaining amount would be less than minimum balance
-        if (this.balance - amount < this.minBalance)
-            throw new Exception("Insufficient Balance");
-        else
+        if (this.balance - amount < this.minBalance) {
+            throw new Exception("Insfficient Balance");
+        }else {
             this.balance -= amount;
+        }
     }
 }
